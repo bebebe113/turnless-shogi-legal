@@ -1,0 +1,41 @@
+:root { color-scheme: light dark; }
+:root {
+  --paper: #e9ecf6; --raised: #f7f8fc; --ink: #1b1a2a; --ink-soft: #5c5870;
+  --line: #cfd3e6; --pond: #4a6aa4; --leaf: #3d8a3a; --leaf-soft: #dcefd2; --link: #2f5aa0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #15141f; --raised: #1f1e2c; --ink: #e8e6f2; --ink-soft: #9a97ad;
+    --line: #34324a; --pond: #7f9fd6; --leaf: #86c45a; --leaf-soft: #22301c; --link: #8fb0ea;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #15141f; --raised: #1f1e2c; --ink: #e8e6f2; --ink-soft: #9a97ad;
+  --line: #34324a; --pond: #7f9fd6; --leaf: #86c45a; --leaf-soft: #22301c; --link: #8fb0ea;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+.masthead { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  border-bottom: 3px solid var(--ink); padding-bottom: 12px; flex-wrap: wrap; }
+.brand { font-weight: 800; font-size: 22px; letter-spacing: .02em; }
+.brand small { display: block; font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+.meta { font-size: 12px; color: var(--ink-soft); text-align: right; }
+.lang { margin: 16px 0 0; font-size: 14px; }
+.lang a { color: var(--link); }
+h1 { font-size: 26px; margin: 28px 0 8px; }
+h2 { font-size: 18px; margin: 36px 0 8px; padding-left: 10px; border-left: 6px solid var(--leaf); }
+h3 { font-size: 15px; margin: 20px 0 4px; }
+p, li { font-size: 15px; }
+a { color: var(--link); }
+.card { background: var(--raised); border: 1px solid var(--line); border-radius: 8px; padding: 4px 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink-soft); font-weight: 600; }
+.callout { background: var(--leaf-soft); border-radius: 6px; padding: 10px 14px; font-size: 14px; }
+.sep { margin: 56px 0 0; border: 0; border-top: 3px solid var(--ink); }
+footer { margin-top: 48px; font-size: 12px; color: var(--ink-soft); }
